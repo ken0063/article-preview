@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Heading,
   IconButton,
   Image,
   Text,
@@ -19,7 +18,8 @@ function App() {
   };
   return (
     <Flex
-      bg="hsl(212, 23%, 69%)"
+      as="div"
+      bg="hsl(210, 46%, 95%)"
       w="100%"
       h="100vh"
       justify="center"
@@ -30,7 +30,7 @@ function App() {
         h={{ base: '515px', md: '285px' }}
         flexDirection={{ base: 'column', md: 'row' }}
         rounded="12px"
-        bg="hsl(210, 46%, 95%)"
+        bg="white"
         position="relative"
       >
         <Box roundedTop={{ base: '12px' }}>
@@ -50,10 +50,10 @@ function App() {
           w={{ base: '100%', md: '70%' }}
           p={{ base: '40px 30px 15px 30px', md: '40px 40px 30px 40px' }}
         >
-          <Heading fontWeight="700" fontSize="17px" mb="25px" lineHeight="24px">
+          <Text fontWeight="700" fontSize="17px" mb="25px" lineHeight="24px">
             Shift the overall look feel by adding these wonderful touches to
             furniture in your home
-          </Heading>
+          </Text>
           <Text fontWeight="500" fontSize="13px" lineHeight="20px" mb="30px">
             Ever been in a room and felt like something was missing? Perhaps it
             felt slightly bare and uninviting. I've got some simple tips to help
@@ -73,6 +73,7 @@ function App() {
           >
             <Image
               src="/images/avatar-michelle.jpg"
+              alt="avatar"
               rounded="50%"
               h="40px"
               w="40px"
@@ -90,16 +91,15 @@ function App() {
                 28 Jun 2020
               </Text>
             </Flex>
-            {!isMobile ? (
+            {!isMobile && (
               <IconButton
                 aria-label="redo-button"
-                icon={<Image src="/images/icon-share.svg" />}
+                icon={<Image src="/images/icon-share.svg" alt="share" />}
                 rounded="50%"
+                bg="hsl(210, 46%, 95%)"
                 onClick={handleOpen}
                 _focus={{ outline: 'none' }}
               />
-            ) : (
-              'kjskaf'
             )}
           </Flex>
         ) : !isMobile ? (
@@ -121,11 +121,26 @@ function App() {
             >
               SHARE
             </Text>
-            <Image src="/images/icon-facebook.svg" h="20px" w="20px" />
+            <Image
+              src="/images/icon-facebook.svg"
+              h="20px"
+              w="20px"
+              alt="facebook"
+            />
 
-            <Image src="/images/icon-pinterest.svg" h="20px" w="20px" />
+            <Image
+              src="/images/icon-pinterest.svg"
+              h="20px"
+              w="20px"
+              alt="pintrest"
+            />
 
-            <Image src="/images/icon-twitter.svg" h="20px" w="20px" />
+            <Image
+              src="/images/icon-twitter.svg"
+              alt="twitter"
+              h="20px"
+              w="20px"
+            />
             <IconButton
               aria-label="redo-button"
               icon={<Image src="/images/icon-share.svg" color="white" />}
@@ -148,6 +163,7 @@ function App() {
           >
             <Image
               src="/images/avatar-michelle.jpg"
+              alt="avatar'"
               rounded="50%"
               h="40px"
               w="40px"
@@ -168,7 +184,8 @@ function App() {
             {!isMobile ? (
               <IconButton
                 aria-label="redo-button"
-                icon={<Image src="/images/icon-share.svg" />}
+                icon={<Image src="/images/icon-share.svg" alt="share" />}
+                bg="hsl(210, 46%, 95%)"
                 rounded="50%"
                 onClick={handleOpen}
                 _focus={{ outline: 'none' }}
